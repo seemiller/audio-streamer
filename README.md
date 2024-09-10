@@ -1,24 +1,21 @@
-# README
+# Audio Streamer
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Demonstrates using the ElevenLabs API to convert text to speech via the streaming endpoint.
 
-Things you may want to cover:
+Setup the project by adding your ElevenLabs API key to the `.env` file:
 
-* Ruby version
+```bash
+cp .env.sample .env
+```
 
-* System dependencies
+Then, run the project:
 
-* Configuration
+```bash
+rails s
+```
 
-* Database creation
+See it in action by running a cURL command like this and opening the resulting file:
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```bash
+curl localhost:3000/stream/tts --progress-bar --output test.mp3
+```
