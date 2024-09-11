@@ -21,7 +21,7 @@ class StreamController < ApplicationController
          quick
        end
 
-      sse_stream_handler(raw: true) do |stream|
+      sse_stream_handler(raw: true, content_type: 'audio/mpeg') do |stream|
         stream_audio(text: text, response_stream: stream)
       end
     rescue => e
